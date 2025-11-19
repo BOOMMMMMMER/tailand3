@@ -1,0 +1,372 @@
+import { Attraction } from './types';
+
+export const APP_NAME = "ThaiVoyage";
+
+// Helper to get consistent random images
+const getImg = (id: number) => `https://picsum.photos/800/600?random=${id}`;
+
+export const ATTRACTIONS: Attraction[] = [
+  // --- 曼谷 BANGKOK ---
+  {
+    id: 'bkk-1',
+    name: '大皇宫 (The Grand Palace)',
+    thaiName: 'พระบรมมหาราชวัง',
+    city: 'Bangkok',
+    description: '自1782年以来的暹罗国王官方居所。这座宏伟的建筑群金碧辉煌，细节精致，是泰国艺术的巅峰之作。',
+    image: getImg(101),
+    category: 'Culture',
+    rating: 4.9,
+    location: 'Na Phra Lan Rd, Phra Borom Maha Ratchawang',
+    highlights: ['玉佛寺', '皇家大厅', '金色舍利塔']
+  },
+  {
+    id: 'bkk-2',
+    name: '郑王庙/黎明寺 (Wat Arun)',
+    thaiName: 'วัดอรุณราชวราราม',
+    city: 'Bangkok',
+    description: '湄南河畔的标志性寺庙，以其装饰着彩色陶瓷的宏伟佛塔而闻名，是曼谷最美的日落观赏点之一。',
+    image: getImg(102),
+    category: 'Temple',
+    rating: 4.8,
+    location: '158 Thanon Wang Doem, Wat Arun',
+    highlights: ['日落美景', '河畔渡轮', '攀登主塔']
+  },
+  {
+    id: 'bkk-3',
+    name: '乍都乍周末市场 (Chatuchak Market)',
+    thaiName: 'ตลาดนัดจตุจักร',
+    city: 'Bangkok',
+    description: '世界上最大的露天市场之一，拥有超过15,000个摊位，从古董、宠物到时尚服饰和街头美食应有尽有。',
+    image: getImg(103),
+    category: 'Shopping',
+    rating: 4.7,
+    location: 'Kamphaeng Phet 2 Rd, Chatuchak',
+    highlights: ['复古服装', '椰子冰淇淋', '手工艺品']
+  },
+  {
+    id: 'bkk-4',
+    name: '考山路 (Khao San Road)',
+    thaiName: 'ถนนข้าวสาร',
+    city: 'Bangkok',
+    description: '世界著名的背包客聚集地，以其充满活力的夜生活、廉价美食和通宵达旦的派对氛围而闻名。',
+    image: getImg(104),
+    category: 'Nightlife',
+    rating: 4.5,
+    location: 'Khao San Road, Phra Nakhon',
+    highlights: ['街头派对', '泰式炒河粉', '炸蝎子体验']
+  },
+  {
+    id: 'bkk-5',
+    name: '唐人街 (Yaowarat)',
+    thaiName: 'เยาวราช',
+    city: 'Bangkok',
+    description: '曼谷最繁华的街区之一，以金店和夜间琳琅满目的街头美食摊位而闻名，是美食家的天堂。',
+    image: getImg(105),
+    category: 'Food',
+    rating: 4.8,
+    location: 'Yaowarat Road, Samphanthawong',
+    highlights: ['海鲜大排档', '燕窝汤', '龙莲寺']
+  },
+  {
+    id: 'bkk-6',
+    name: '金汤普森博物馆 (Jim Thompson House)',
+    thaiName: 'พิพิธภัณฑ์บ้านจิม ทอมป์สัน',
+    city: 'Bangkok',
+    description: '这位美国商人和建筑师的故居，展示了他收藏的东南亚艺术品，以及传统的泰式柚木建筑。',
+    image: getImg(106),
+    category: 'Culture',
+    rating: 4.6,
+    location: '6 Soi Kasemsan 2, Rama 1 Rd',
+    highlights: ['泰丝历史', '传统柚木屋', '热带花园']
+  },
+  {
+    id: 'bkk-7',
+    name: '暹罗天地 (ICONSIAM)',
+    thaiName: 'ไอคอนสยาม',
+    city: 'Bangkok',
+    description: '位于湄南河畔的巨型综合购物中心，拥有奢华品牌、室内水上市场和壮观的河畔景色。',
+    image: getImg(107),
+    category: 'Shopping',
+    rating: 4.9,
+    location: '299 Charoen Nakhon Rd',
+    highlights: ['室内水上市场', '声光水秀', 'Apple Store']
+  },
+  {
+    id: 'bkk-8',
+    name: '伦披尼公园 (Lumphini Park)',
+    thaiName: 'สวนลุมพินี',
+    city: 'Bangkok',
+    description: '曼谷的"绿肺"，市中心难得的开阔绿地，适合晨练、划船和观察野生泽巨蜥。',
+    image: getImg(108),
+    category: 'Nature',
+    rating: 4.5,
+    location: 'Rama IV Rd, Pathum Wan',
+    highlights: ['野生泽巨蜥', '天鹅船', '晨间太极']
+  },
+  {
+    id: 'bkk-9',
+    name: '卧佛寺 (Wat Pho)',
+    thaiName: 'วัดโพธิ์',
+    city: 'Bangkok',
+    description: '以巨大的金色卧佛像和作为传统泰式按摩的发源地而闻名。',
+    image: getImg(109),
+    category: 'Temple',
+    rating: 4.8,
+    location: '2 Sanam Chai Rd, Phra Borom Maha Ratchawang',
+    highlights: ['巨型卧佛', '古法按摩学校', '石雕像']
+  },
+  {
+    id: 'bkk-10',
+    name: '河滨夜市 (Asiatique)',
+    thaiName: 'เอเชียทีค เดอะ ริเวอร์ฟรอนท์',
+    city: 'Bangkok',
+    description: '位于河畔的露天大型购物中心，结合了夜市的氛围和现代化的购物餐饮体验。',
+    image: getImg(110),
+    category: 'Nightlife',
+    rating: 4.4,
+    location: '2194 Charoen Krung Rd',
+    highlights: ['摩天轮', '人妖秀', '河畔晚餐']
+  },
+  {
+    id: 'bkk-11',
+    name: '四面佛 (Erawan Shrine)',
+    thaiName: 'ศาลท้าวมหาพรหม',
+    city: 'Bangkok',
+    description: '位于市中心繁华路口的著名神像，据说非常灵验，每天都有大量信徒前来许愿还愿。',
+    image: getImg(111),
+    category: 'Culture',
+    rating: 4.7,
+    location: 'Ratchadamri Rd, Lumphini',
+    highlights: ['传统舞蹈还愿', '许愿', '市中心地标']
+  },
+  {
+    id: 'bkk-12',
+    name: '乔德夜市 (Jodd Fairs)',
+    thaiName: 'จ๊อดแฟร์',
+    city: 'Bangkok',
+    description: '曼谷当红的网红夜市，以火山排骨、水果西施和各种潮流美食小吃著称。',
+    image: getImg(112),
+    category: 'Food',
+    rating: 4.6,
+    location: 'Rama IX Rd, Huai Khwang',
+    highlights: ['火山排骨', '水果沙冰', '复古车展示']
+  },
+  {
+    id: 'bkk-13',
+    name: '王权云顶大厦 (Mahanakhon SkyWalk)',
+    thaiName: 'มหานคร สกายวอร์ค',
+    city: 'Bangkok',
+    description: '泰国的标志性摩天大楼，拥有透明玻璃地板观景台，可360度俯瞰曼谷全景。',
+    image: getImg(113),
+    category: 'Nature',
+    rating: 4.8,
+    location: 'Naradhiwas Rajanagarindra Rd',
+    highlights: ['玻璃栈道', '屋顶酒吧', '日落全景']
+  },
+  {
+    id: 'bkk-14',
+    name: '暹罗百丽宫 (Siam Paragon)',
+    thaiName: 'สยามพารากอน',
+    city: 'Bangkok',
+    description: '世界级的豪华购物中心，汇集了国际大牌、东南亚最大的水族馆和豪华电影院。',
+    image: getImg(114),
+    category: 'Shopping',
+    rating: 4.8,
+    location: '991 Rama I Rd, Pathum Wan',
+    highlights: ['海洋世界', '豪华品牌', '美食广场']
+  },
+  {
+    id: 'bkk-15',
+    name: '金山寺 (Wat Saket)',
+    thaiName: 'วัดสระเกศ',
+    city: 'Bangkok',
+    description: '坐落在人造山丘上的古老寺庙，攀登300多级台阶后可俯瞰老城区美景。',
+    image: getImg(115),
+    category: 'Temple',
+    rating: 4.6,
+    location: '344 Chakkraphatdiphong Rd',
+    highlights: ['360度景观', '黄金舍利塔', '祈福钟声']
+  },
+
+  // --- 芭提雅 PATTAYA ---
+  {
+    id: 'pty-1',
+    name: '真理寺 (Sanctuary of Truth)',
+    thaiName: 'ปราสาทสัจธรรม',
+    city: 'Pattaya',
+    description: '一座令人惊叹的巨型全木结构建筑，位于海边，融合了寺庙与城堡的风格，雕刻极其精美。',
+    image: getImg(201),
+    category: 'Culture',
+    rating: 4.8,
+    location: '206/2 Moo 5, Soi Naklua 12',
+    highlights: ['全木雕刻', '哲学寓意', '骑大象体验']
+  },
+  {
+    id: 'pty-2',
+    name: '芭提雅步行街 (Walking Street)',
+    thaiName: 'วอล์คกิ้ง สตรีท พัทยา',
+    city: 'Pattaya',
+    description: '泰国最大、最热闹的派对中心，霓虹灯闪烁，遍布酒吧、夜总会和餐厅。',
+    image: getImg(202),
+    category: 'Nightlife',
+    rating: 4.3,
+    location: 'Walking St, Muang Pattaya',
+    highlights: ['夜总会', '现场乐队', '海鲜餐厅']
+  },
+  {
+    id: 'pty-3',
+    name: '格兰岛 (Koh Larn)',
+    thaiName: 'เกาะล้าน',
+    city: 'Pattaya',
+    description: '距离芭提雅仅需乘坐短程渡轮的美丽岛屿，拥有洁白的沙滩和清澈的海水。',
+    image: getImg(203),
+    category: 'Nature',
+    rating: 4.7,
+    location: 'Koh Larn, Bang Lamung',
+    highlights: ['达元海滩', '浮潜', '环岛摩托']
+  },
+  {
+    id: 'pty-4',
+    name: '东芭乐园 (Nong Nooch Garden)',
+    thaiName: 'สวนนงนุช',
+    city: 'Pattaya',
+    description: '占地500英亩的巨大植物园，拥有恐龙谷、泰国民俗表演和大象表演。',
+    image: getImg(204),
+    category: 'Family',
+    rating: 4.6,
+    location: '34 Na Chom Thian, Sattahip',
+    highlights: ['恐龙谷', '法式花园', '民俗表演']
+  },
+  {
+    id: 'pty-5',
+    name: '四方水上市场 (Pattaya Floating Market)',
+    thaiName: 'ตลาดน้ำ 4 ภาค',
+    city: 'Pattaya',
+    description: '展示泰国四个地区（北部、东北部、中部和南部）生活方式的河畔景点。',
+    image: getImg(205),
+    category: 'Culture',
+    rating: 4.2,
+    location: '451/304 Moo 12, Sukhumvit Rd',
+    highlights: ['手划船', '特色小吃', '水上拳击']
+  },
+  {
+    id: 'pty-6',
+    name: '大佛寺 (Big Buddha Temple)',
+    thaiName: 'วัดพระใหญ่',
+    city: 'Pattaya',
+    description: '帕塔纳克山顶的一座巨大金色佛像，高18米，是祈福和俯瞰城市的绝佳地点。',
+    image: getImg(206),
+    category: 'Temple',
+    rating: 4.5,
+    location: 'Pratumnak Hill, Pattaya',
+    highlights: ['城市全景', '金色大佛', '祈福仪式']
+  },
+  {
+    id: 'pty-7',
+    name: '3D艺术馆 (Art In Paradise)',
+    thaiName: 'อาร์ต อิน พาราไดซ์',
+    city: 'Pattaya',
+    description: '互动式3D艺术博物馆，游客可以融入画作中，拍摄各种有趣的创意照片。',
+    image: getImg(207),
+    category: 'Family',
+    rating: 4.4,
+    location: '78/34 Moo 9 Pattaya 2nd Rd',
+    highlights: ['视觉错觉', '互动区域', '趣味拍照']
+  },
+  {
+    id: 'pty-8',
+    name: '中天海滩 (Jomtien Beach)',
+    thaiName: 'หาดจอมเทียน',
+    city: 'Pattaya',
+    description: '相比芭提雅海滩更安静的选择，适合水上运动、家庭野餐和欣赏日落。',
+    image: getImg(208),
+    category: 'Nature',
+    rating: 4.3,
+    location: 'Jomtien Beach Rd',
+    highlights: ['帆板运动', '夜市', '休闲氛围']
+  },
+  {
+    id: 'pty-9',
+    name: '蒂芬妮人妖秀 (Tiffany\'s Show)',
+    thaiName: 'ทิฟฟานี่โชว์',
+    city: 'Pattaya',
+    description: '芭提雅最原始、最著名的人妖歌舞秀，以其壮观的服装、舞台布景和百老汇风格著称。',
+    image: getImg(209),
+    category: 'Nightlife',
+    rating: 4.7,
+    location: '464 Moo 9, Pattaya 2nd Rd',
+    highlights: ['歌舞表演', '华丽服饰', '合影留念']
+  },
+  {
+    id: 'pty-10',
+    name: '罗摩衍那水上乐园 (Ramayana Water Park)',
+    thaiName: 'สวนน้ำรามายณะ',
+    city: 'Pattaya',
+    description: '泰国最大、设施最先进的水上乐园，拥有众多惊险刺激的滑道和休闲区。',
+    image: getImg(210),
+    category: 'Family',
+    rating: 4.8,
+    location: '9 Moo 7, Na Chom Thian',
+    highlights: ['垂直滑道', '懒人河', '造浪池']
+  },
+  {
+    id: 'pty-11',
+    name: '七珍佛山 (Khao Chi Chan)',
+    thaiName: 'เขาชีจรรย์',
+    city: 'Pattaya',
+    description: '用激光在悬崖峭壁上雕刻并镶嵌黄金的巨大佛像，十分壮观。',
+    image: getImg(211),
+    category: 'Culture',
+    rating: 4.6,
+    location: 'Soi Chi Chan, Na Chom Thian',
+    highlights: ['激光雕刻', '黄金佛像', '自然公园']
+  },
+  {
+    id: 'pty-12',
+    name: 'Terminal 21 Pattaya',
+    thaiName: 'เทอร์มินอล 21 พัทยา',
+    city: 'Pattaya',
+    description: '以机场航站楼为主题的大型购物中心，每一层都代表一个世界著名城市，如巴黎、伦敦、东京。',
+    image: getImg(212),
+    category: 'Shopping',
+    rating: 4.7,
+    location: 'Moo 6, N Pattaya Rd',
+    highlights: ['埃菲尔铁塔', '各国主题厕所', '美食广场']
+  },
+  {
+    id: 'pty-13',
+    name: '帕塔纳克山观景点 (Pattaya View Point)',
+    thaiName: 'จุดชมวิวพัทยา',
+    city: 'Pattaya',
+    description: '芭提雅的最佳观景点，可以俯瞰著名的新月形海湾和城市天际线。',
+    image: getImg(213),
+    category: 'Nature',
+    rating: 4.6,
+    location: 'Pratumnak Hill',
+    highlights: ['海湾全景', '日落摄影', '咖啡厅']
+  },
+  {
+    id: 'pty-14',
+    name: '芭提雅海底世界 (Underwater World)',
+    thaiName: 'อันเดอร์วอเตอร์ เวิลด์ พัทยา',
+    city: 'Pattaya',
+    description: '一条长达100米的如梦似幻的海底隧道，展示了泰国湾丰富的海洋生物。',
+    image: getImg(214),
+    category: 'Family',
+    rating: 4.4,
+    location: '22/22 Moo 11, Sukhumvit Rd',
+    highlights: ['海底隧道', '喂食秀', '触摸池']
+  },
+  {
+    id: 'pty-15',
+    name: '玻璃屋餐厅 (The Glass House)',
+    thaiName: 'เดอะ กลาส เฮ้าส์',
+    city: 'Pattaya',
+    description: '位于海滩上的浪漫玻璃屋餐厅，提供美味的海鲜和泰式料理，氛围极佳。',
+    image: getImg(215),
+    category: 'Food',
+    rating: 4.5,
+    location: '5/22 Moo 2, Na Jomtien',
+    highlights: ['沙滩晚餐', '日落景观', '海鲜烧烤']
+  }
+];
